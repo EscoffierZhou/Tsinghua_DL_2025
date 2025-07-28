@@ -10,7 +10,7 @@
 
 1.设计神经网络
 
-2.学习好的映射($X \rightarrow Y$,$Y \rightarrow X$)
+2.学习好的映射($$X \rightarrow Y,Y \rightarrow X$$)
 
 3.如何部署训练好的模型解决现实世界问题
 
