@@ -26,9 +26,13 @@
 >
 >>   如果使用阶跃函数:错误驱动的学习(其中$$ (y_i - ŷ_i)$$)
 >>
->>   >$$w_{new} = w_{old} + η * (y_i - \hat{y}_i) * x_i$$
+>>   >```math
+>>   >w_{new} = w_{old} + η * (y_i - \hat{y}_i) * x_i
+>>   >```
 >>   >
->>   >$$b_{new} = b_{old} + η * (y_i - \hat{y}_i)$$
+>>   >```math
+>>   >b_{new} = b_{old} + η * (y_i - \hat{y}_i)
+>>   >```
 >>
 >>   如果使用非线性函数(sigmoid):可以通过梯度来算(凸优化问题)
 >
@@ -114,15 +118,27 @@
 >
 >![image-20250729152951647](./assets/image-20250729152951647.png)
 >
->**1.首先求关于激活值z的偏导:**$$\frac{\partial Div}{\partial z^{(N)}_i} = f^{'}_N(z^{(N)}_{i})\frac{\partial Div}{\partial y^{(N)}_i}$$
+>**1.首先求关于激活值z的偏导:**
+>
+>```math
+>\frac{\partial Div}{\partial z^{(N)}_i} = f^{'}_N(z^{(N)}_{i})\frac{\partial Div}{\partial y^{(N)}_i}
+>```
 >
 >![image-20250729151810134](./assets/image-20250729151810134.png)
 >
->**2.然后求关于权重q的偏导:**$$\frac{\partial Div}{\partial w^{(N)}_{11}} = \frac{\partial z_1^{N}}{\partial w^{(N)}_{11}}\frac{\partial Div}{\partial z^{(N)}_{1}} = y^{(N-1)}_1\frac{\partial Div}{\partial z^{(N)}_{1}}$$
+>**2.然后求关于权重q的偏导:**
+>
+>```math
+>\frac{\partial Div}{\partial w^{(N)}_{11}} = \frac{\partial z_1^{N}}{\partial w^{(N)}_{11}}\frac{\partial Div}{\partial z^{(N)}_{1}} = y^{(N-1)}_1\frac{\partial Div}{\partial z^{(N)}_{1}}
+>```
 >
 >![image-20250729152059783](./assets/image-20250729152059783.png)
 >
->**3.然后求关于上一层净输出的偏导:**$$\frac{\partial Div}{\partial y_1^{(N-1)}} = \sum_j\frac{\partial z^{(N))}_{j}}{\partial y^{(N-1)}_{1}}\frac{\partial Div}{\partial z^{(N)}_{j}} = \sum_jw^{(N)}_{ij}\frac{\partial Div}{\partial z^{(N)}_{j}}$$
+>**3.然后求关于上一层净输出的偏导:**
+>
+>```math
+>\frac{\partial Div}{\partial y_1^{(N-1)}} = \sum_j\frac{\partial z^{(N))}_{j}}{\partial y^{(N-1)}_{1}}\frac{\partial Div}{\partial z^{(N)}_{j}} = \sum_jw^{(N)}_{ij}\frac{\partial Div}{\partial z^{(N)}_{j}}
+>```
 
 **11.设计MLP(包括设计宽度深度/损失函数/学习率/正则化项)**
 
