@@ -28,7 +28,7 @@ Problem 4(证明下降引理)
 >f(y) - f(x) = \int_0^1 \nabla f(x + t(y - x))^T (y - x) dt
 >```
 >
->(2)两边同时减去$`\grad f(x)^T (y-x)`$并且写成$`\int^1_0 \grad f(x)^T(y-x)dt`$
+>(2)两边同时减去$`\nabla f(x)^T (y-x)`$并且写成$`\int^1_0 \nabla f(x)^T(y-x)dt`$
 >
 >```math
 >f(y) - f(x) - \nabla f(x)^T(y - x) = \int_0^1 (\nabla f(x + t(y - x)) - \nabla f(x))^T (y - x) dt
