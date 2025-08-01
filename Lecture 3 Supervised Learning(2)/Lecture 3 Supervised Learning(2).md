@@ -4,11 +4,11 @@
 
 **1.Recap:训练神经网络的基本表示**
 
->训练数据:$$X = \{(x^i,y^i) \}$$
+>训练数据:$`X = \{(x^i,y^i) \}`$
 >
->神经网络:$$y = f(x;\theta)$$
+>神经网络:$`y = f(x;\theta)`$
 >
->损失函数:$$L(\theta) = \frac{1}{N}\sum_i err(f(x^i;\theta);y^i) $$
+>损失函数:$`L(\theta) = \frac{1}{N}\sum_i err(f(x^i;\theta);y^i)`$
 >
 >目标:最小化损失(错误率)
 >
@@ -22,7 +22,7 @@
 >   \begin{align}
 >   &f(x + y)\leq \frac{1}{2}(f(x) + f(y))
 >   \\ \\
->   &\grad^2f(x)\geq 0
+>   &\nabla ^2f(x)\geq 0
 >   \end{align}
 >   ```
 >
@@ -51,7 +51,7 @@
 >   (5)凸优化:下降引理(由L-smooth凸函数得到)
 >
 >   >   ```math
->   >   f(y)\leq f(x) + \grad f(x)^T (y-x)+\frac{L}{2}|x-y|^2
+>   >   f(y)\leq f(x) + \nabla  f(x)^T (y-x)+\frac{L}{2}|x-y|^2
 >   >   ```
 >   >
 >   >   其中最后一部分叫做**二次上界**表示了函数的增长值
@@ -60,13 +60,13 @@
 >   >
 >   >   ```math
 >   >   \begin{align}
->   >   &1.微积分基本定理:  f(y)- f(x) = \int^{1}_{0}\grad f(x+t(y-x))^T(y-x)dt
+>   >   &1.微积分基本定理:  f(y)- f(x) = \int^{1}_{0}\nabla  f(x+t(y-x))^T(y-x)dt
 >   >   \\ \\
->   >   &2.展开:f(y)-f(x) = \int^{1}_{0}(\grad f(x + t(y-x)) - \grad f(x))(y-x)dl + \int^{1}_{0}\grad f(x)^T (y-x)dt
+>   >   &2.展开:f(y)-f(x) = \int^{1}_{0}(\nabla  f(x + t(y-x)) - \nabla  f(x))(y-x)dl + \int^{1}_{0}\nabla  f(x)^T (y-x)dt
 >   >   \\ \\
->   >   &3a.第二个积分直接化简:\int^{1}_{0}\grad f(x)^T(y-x)dt = \grad f(x)^T (y-x)
+>   >   &3a.第二个积分直接化简:\int^{1}_{0}\nabla  f(x)^T(y-x)dt = \nabla  f(x)^T (y-x)
 >   >   \\ \\
->   >   &3b.第一个积分使用柯西不等式和L光滑:\int^{1}_{0}(\grad f(x+y(y-x)) - \grad f(x))^T(y-x)dt \leq \int^{1}_{0}L||t(y-x)|| ||y-x||dt = \frac{L}{2}||y-x||^2
+>   >   &3b.第一个积分使用柯西不等式和L光滑:\int^{1}_{0}(\nabla  f(x+y(y-x)) - \nabla  f(x))^T(y-x)dt \leq \int^{1}_{0}L||t(y-x)|| ||y-x||dt = \frac{L}{2}||y-x||^2
 >   >   \\ \\
 >   >   &4.代入(2)式:f(y)\leq f(x)^T(y-x) + \frac{L}{2}||x-y||^2(二次上界)
 >   >   \end{align}
@@ -83,7 +83,7 @@
 >   (6)凸优化:进展限界(progress-bound)
 >
 >   >```math
->   >|\grad f(x^K)|^2\leq 2L(f(x^K) - f(x^{k+1}))
+>   >|\nabla  f(x^K)|^2\leq 2L(f(x^K) - f(x^{k+1}))
 >   >```
 >   >
 >   >推理方法:将前后两个点代入下降引理,然后取极值
@@ -126,7 +126,7 @@
 >
 >因为海森矩阵本身描述了函数的局部曲率;Lipschitz海森则保证了局部曲率的变化率不会太大
 >
->牛顿法:$$f(y) \approx f(x) + \grad f(x)^T(y-x)+ \frac{1}{2}(y-x)^T\grad^2f(x)(y-x)$$
+>牛顿法:$$f(y) \approx f(x) + \nabla  f(x)^T(y-x)+ \frac{1}{2}(y-x)^T\nabla ^2f(x)(y-x)$$
 >
 >Lipschitz Hessian 条件保证了这个近似的**误差是可以被控制的**
 >
@@ -198,11 +198,11 @@
 >>
 >>   ![image-20250801134120628](./assets/image-20250801134120628.png)
 >>
->>   **AdaGrad:退火学习率(annealing learning rate)**
+>>   **Adanabla :退火学习率(annealing learning rate)**
 >>
 >>   ![image-20250801134218930](./assets/image-20250801134218930.png)
 >>
->>   RMSProp(AdaGrad的优化版本,避免了学习率消失,并且在RNN表现良好)
+>>   RMSProp(Adanabla 的优化版本,避免了学习率消失,并且在RNN表现良好)
 >>
 >>   ![image-20250801134343716](./assets/image-20250801134343716.png)
 >>
